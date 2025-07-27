@@ -1,19 +1,23 @@
 package com.alfie.quarkusbooktracker.model;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
+@Data
 public class BookRequest {
 
     @NotBlank
-    public String title;
+    private String title;
 
-    public String author;
+    private String author;
 
-    public Book.Status status;
+    private Book.Status status;
 
     @Min(1)
     @Max(5)
-    public Integer rating;
+    private Integer rating;
 
-    public String notes;
+    private String notes;
 }
